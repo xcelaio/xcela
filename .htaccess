@@ -1,0 +1,6 @@
+Options +FollowSymLinks
+RewriteEngine Off
+RewriteCond %{QUERY_STRING} !marker  
+RewriteCond %{QUERY_STRING} k=([-a-zA-Z0-9_+]+)
+RewriteRule ^/?index.php$ %1? [R=301,L]  
+RewriteRule ^/?([-a-zA-Z0-9_+]+)/?$ index.php?marker&k=$1 [L]
